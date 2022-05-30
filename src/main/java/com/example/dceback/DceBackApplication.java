@@ -29,10 +29,9 @@ public class DceBackApplication {
 //            usuarioService.saveTipoUsuario(new TipoUsuario(null, "Administrador"));
 //            usuarioService.saveTipoUsuario(new TipoUsuario(null, "Normal"));
 //
-//            usuarioService.saveUsuario(new Usuario(null, "Gabriel", "gabriel@gmail.com", "1234", "12345567800",
-//                    "98888898", new ArrayList<>()));
-//            usuarioService.saveUsuario(new Usuario(null, "Admin", "admin@gmail.com", "1234", "12345567800",
-//                    "98888898", new ArrayList<>()));
+//            usuarioService.saveUsuario(new Usuario(null, "Gabriel", "gabriel@gmail.com",
+//                    "1234", new ArrayList<>()));
+//            usuarioService.saveUsuario(new Usuario(null, "Admin", "admin@gmail.com", "1234", new ArrayList<>()));
 //
 //            usuarioService.addTipoUsuarioParaUsuario("gabriel@gmail.com", "Normal");
 //            usuarioService.addTipoUsuarioParaUsuario("admin@gmail.com", "Administrador");
