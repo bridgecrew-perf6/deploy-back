@@ -26,6 +26,7 @@ public class AnuncioResource {
         return ResponseEntity.ok(anuncioService.findAll());
     }
 
+    @CrossOrigin
     @DeleteMapping("/anuncio/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         anuncioService.delete(id);
