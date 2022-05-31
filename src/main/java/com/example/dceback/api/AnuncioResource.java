@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 @EnableWebSecurity
+@CrossOrigin(origins = "http://localhost:3000")
 public class AnuncioResource {
     private final AnuncioService anuncioService;
 
@@ -26,7 +27,6 @@ public class AnuncioResource {
         return ResponseEntity.ok(anuncioService.findAll());
     }
 
-    @CrossOrigin
     @DeleteMapping("/anuncio/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         anuncioService.delete(id);
