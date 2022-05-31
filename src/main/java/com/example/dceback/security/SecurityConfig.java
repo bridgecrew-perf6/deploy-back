@@ -59,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
         http.authorizeRequests()
                 .antMatchers(POST,"/api/login/**", "/api/usuario/**", "/api/anuncio/**", "/api/usuario/**", "/usuario/poremail/**").permitAll()
                 .antMatchers(DELETE, "api/anuncio/**").permitAll()
+                .antMatchers(PUT, "/api/anuncio/**", "api/usuario/**").permitAll()
                 .antMatchers(GET, "/api/usuarios/**", "/api/anuncios/**", "/api/usuario/email/**", "/api/usuario/**", "/usuario/poremail/**").permitAll()
                 .anyRequest().authenticated()
                 .and().cors().and().csrf().disable();
