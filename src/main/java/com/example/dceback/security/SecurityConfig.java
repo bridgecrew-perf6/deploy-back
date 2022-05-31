@@ -21,8 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.springframework.http.HttpMethod.GET;
-import static org.springframework.http.HttpMethod.POST;
+import static org.springframework.http.HttpMethod.*;
 import static org.springframework.security.config.http.SessionCreationPolicy.*;
 
 @Configuration @EnableWebSecurity @RequiredArgsConstructor
@@ -59,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
 //        http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
         http.authorizeRequests()
                 .antMatchers(POST,"/api/login/**", "/api/usuario/**", "/api/anuncio/**", "/api/usuario/**", "/usuario/poremail/**").permitAll()
+                .antMatchers(DELETE, "api/*").permitAll()
                 .antMatchers(GET, "/api/usuarios/**", "/api/anuncios/**", "/api/usuario/email/**", "/api/usuario/**", "/usuario/poremail/**").permitAll()
                 .anyRequest().authenticated()
                 .and().cors().and().csrf().disable();
