@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
 //        http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
         http.authorizeRequests()
                 .antMatchers(POST,"/api/login/**", "/api/usuario/**", "/api/anuncio/**", "/api/usuario/**", "/usuario/poremail/**").permitAll()
-                .antMatchers(DELETE, "api/*").permitAll()
+                .antMatchers(DELETE, "api/**").permitAll()
                 .antMatchers(GET, "/api/usuarios/**", "/api/anuncios/**", "/api/usuario/email/**", "/api/usuario/**", "/usuario/poremail/**").permitAll()
                 .anyRequest().authenticated()
                 .and().cors().and().csrf().disable();
@@ -75,7 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST", "DELETE", "OPTIONS"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
